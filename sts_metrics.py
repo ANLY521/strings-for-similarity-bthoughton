@@ -177,12 +177,3 @@ def edit_dist(texts):
     score = edit_distance(text1, text2)
 
     return score
-
-
-if __name__ == '__main__':
-
-    sts_data = 'stsbenchmark/sts-dev.csv'
-    txts, lbls = parse_sts(sts_data)
-    sim_metrics = SimilarityMetrics(txts, lbls)
-
-    print(sim_metrics.tokens)
