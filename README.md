@@ -53,9 +53,9 @@ Edit Dist | 0.033  | -0.175 | -0.039
 
 The argument following `--sts-data` flag can be any of the following:
 
-`sts-dev.csv`
-`sts-train.csv`
-`sts-test.csv`
+`stsbenchmark/sts-dev.csv`
+`stsbenchmark/sts-train.csv`
+`stsbenchmark/sts-test.csv`
 
 ## lab, week 1: sts_nist.py
 
