@@ -129,7 +129,7 @@ def symmetrical_word_error(tokens):
     return error_rate
 
 
-def longest_common(texts):
+def longest_common_substring(texts):
     """
     Determines the longest common substring of two texts.
 

@@ -2,14 +2,22 @@ import argparse
 import numpy as np
 from util import parse_sts
 from nltk.tokenize import word_tokenize
-from sts_metrics import symmetrical_nist, symmetrical_bleu, longest_common, \
-    symmetrical_word_error, edit_dist
+from sts_metrics import symmetrical_nist, symmetrical_bleu, \
+    longest_common_substring, symmetrical_word_error, edit_dist
 from scipy.stats import pearsonr
 
 
 def main(sts_data):
-    """Calculate pearson correlation between semantic similarity scores and string similarity metrics.
-    Data is formatted as in the STS benchmark"""
+    """
+    Calculates pearson correlation between semantic similarity scores and string
+    similarity metrics. Data is formatted as in the STS benchmark.
+
+    Arguments:
+        sts_data (str): The system file path to the STS data set.
+
+    Returns:
+        None
+    """
 
     # TODO 1: read the dataset; implement in util.py
 
@@ -18,7 +26,7 @@ def main(sts_data):
 
     # Convert the texts to lower case and store in numpy array
     texts = np.array([[text.lower() for text in pair]
-                      for pair in texts], dtype=object)
+                      for pair in texts])
 
     # Convert the texts to tokens and place into numpy array
     tokens = np.array([[word_tokenize(text) for text in pair]
@@ -47,7 +55,7 @@ def main(sts_data):
     # Define the metrics which require strings and their function calls as key,
     # value pairs, functions defined in sts_metrics.py sister module
     string_metrics = {
-        'Longest common substring': longest_common,
+        'Longest common substring': longest_common_substring,
         'Edit Distance': edit_dist
     }
 
